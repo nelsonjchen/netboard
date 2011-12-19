@@ -34,3 +34,6 @@ group :test do
   # Pretty printed test output
   gem 'turn', '0.8.2', :require => false
 end
+
+# Pry for better console
+gem 'pry-rails', :group => :development
