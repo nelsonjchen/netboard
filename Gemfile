@@ -36,4 +36,13 @@ group :test do
 end
 
 # Pry for better console
-gem 'pry-rails', :group => :development
+# Guard for autotest
+group :development do
+  gem 'guard'
+  gem 'pry-rails'
+  gem 'guard-test'
+  
+  platforms :ruby do
+    gem 'rb-readline'
+  end
+end
