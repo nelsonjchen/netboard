@@ -41,6 +41,7 @@ group :development do
   gem 'guard'
   gem 'pry-rails'
   gem 'guard-test'
+  gem 'rb-readline'
   
   platforms :ruby do
     gem 'rb-readline'
