@@ -39,4 +39,5 @@ class HostTest < ActiveSupport::TestCase
     end
   end
 
+
 end
