@@ -11,16 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111223060034) do
+ActiveRecord::Schema.define(:version => 20111223065252) do
 
   create_table "hosts", :force => true do |t|
-    t.string   "address"
+    t.string   "address",                                :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "inbound",             :precision => 16, :scale => 0
-    t.decimal  "outbound",            :precision => 16, :scale => 0
-    t.boolean  "inbound_restricted"
-    t.boolean  "outbound_restricted"
+    t.decimal  "inbound",             :default => 0.0,   :null => false
+    t.decimal  "outbound",            :default => 0.0,   :null => false
+    t.boolean  "inbound_restricted",  :default => false, :null => false
+    t.boolean  "outbound_restricted", :default => false, :null => false
   end
 
   add_index "hosts", ["address"], :name => "index_hosts_on_address", :unique => true
