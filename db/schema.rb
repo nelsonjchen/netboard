@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111223005838) do
+ActiveRecord::Schema.define(:version => 20111223060034) do
 
   create_table "hosts", :force => true do |t|
     t.string   "address"
@@ -22,5 +22,7 @@ ActiveRecord::Schema.define(:version => 20111223005838) do
     t.boolean  "inbound_restricted"
     t.boolean  "outbound_restricted"
   end
+
+  add_index "hosts", ["address"], :name => "index_hosts_on_address", :unique => true
 
 end
