@@ -33,4 +33,10 @@ class HostTest < ActiveSupport::TestCase
     assert_equal true, c.inbound_restricted
   end
 
+  test "looking up nonexistant host" do
+    assert_raise(ActiveRecord::RecordNotFound) do
+      Host.find_by_address!("127.0.0.1")
+    end
+  end
+
 end
