@@ -15,4 +15,9 @@ class HostTest < ActiveSupport::TestCase
     end
   end
 
+  test "capped cable modem user is capped" do
+    a = Host.find_by_address("169.231.32.4")
+    assert_equal true, a.inbound_restricted
+  end
+
 end
