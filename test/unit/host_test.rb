@@ -5,9 +5,14 @@ class HostTest < ActiveSupport::TestCase
     assert true
   end
 
-  test "hosts without information do not save" do
-    h = Host.new
-    assert_equal false, h.save
+  test "can't save hosts with the same address" do
+    a = Host.new(address:"169.231.24.2",inbound:50)
+    b = Host.new(address:"169.231.24.2",inbound:0)
+
+    a.save
+    assert_raise(ActiveRecord::RecordNotUnique) do
+      b.save
+    end
   end
 
 end
