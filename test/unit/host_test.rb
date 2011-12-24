@@ -6,7 +6,6 @@ class HostTest < ActiveSupport::TestCase
     assert true
   end
 
-  # Test uniqueness
   test "can't save hosts with the same address" do
     a = Host.new(ip_address:"169.231.24.2",inbound:50)
     b = Host.new(ip_address:"169.231.24.2",inbound:0)
@@ -14,7 +13,6 @@ class HostTest < ActiveSupport::TestCase
     assert_equal false, b.save
   end
 
-  # I'm looking for a cable modem user
   test "capped cable modem user is capped" do
     a = Host.find_by_address(hosts(:capped_cable_modem_user).ip_address)
     assert_equal true, a.inbound_restricted
