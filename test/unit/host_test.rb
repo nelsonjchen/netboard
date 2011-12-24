@@ -13,11 +13,13 @@ class HostTest < ActiveSupport::TestCase
     assert_equal false, b.save
   end
 
+  # I'm looking for a cable modem user
   test "capped cable modem user is capped" do
     a = Host.find_by_address("169.231.32.4")
     assert_equal true, a.inbound_restricted
   end
 
+  # Pretend update script thing
   test "update an existing host with new data" do
     b = Host.find_or_create_by_ip_address("169.231.33.2")
     b.update_attributes({
