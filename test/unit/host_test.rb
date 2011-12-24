@@ -25,13 +25,14 @@ class HostTest < ActiveSupport::TestCase
 
   # Pretend update script thing
   test "update an existing host with new data" do
-    b = Host.find_or_create_by_ip_address("169.231.33.2")
+    updating_user_address = hosts(:user_that_needs_updating).ip_address
+    b = Host.find_or_create_by_ip_address(updating_user_address)
     b.update_attributes({
       inbound: 9999999999,
       outbound: 0,
       inbound_restricted:true,
       outbound_restricted:false})
-    c = Host.find_or_create_by_ip_address("169.231.33.2")
+    c = Host.find_or_create_by_ip_address(updating_user_address)
     assert_equal 0, c.outbound
     assert_equal 9999999999, c.inbound
     assert_equal true, c.inbound_restricted
