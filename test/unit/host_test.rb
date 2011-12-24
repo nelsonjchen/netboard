@@ -1,4 +1,5 @@
 require 'test_helper'
+require 'resolv'
 
 class HostTest < ActiveSupport::TestCase
   test "the truth" do
@@ -33,10 +34,20 @@ class HostTest < ActiveSupport::TestCase
     assert_equal true, c.inbound_restricted
   end
 
-  test "looking up nonexistant host" do
+  test "looking up nonexistant ip address" do
     assert_raise(ActiveRecord::RecordNotFound) do
       Host.find_by_address!("127.0.0.1")
     end
   end
 
+  test "looking up a user who puts in a DNS name" do
+    Resolv.expects(:getaddress).with("example.com").returns("169.231.12.129")
+    h = Host.find_by_address("example.com")
+    assert_equal "169.231.12.129", h.ip_address
+  end
+
+  test "looking up for a user who puts in a DNS name that doesn't exist" do
+    Resolv.expects(:getaddress).with("example.com").returns("127.0.0.1")
+    assert_equal nil, Host.find_by_address("example.com")
+  end
 end
