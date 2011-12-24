@@ -11,10 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111223065252) do
+ActiveRecord::Schema.define(:version => 20111224042531) do
 
   create_table "hosts", :force => true do |t|
-    t.string   "address",                                :null => false
+    t.string   "ip_address",                             :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.decimal  "inbound",             :default => 0.0,   :null => false
@@ -23,6 +23,6 @@ ActiveRecord::Schema.define(:version => 20111223065252) do
     t.boolean  "outbound_restricted", :default => false, :null => false
   end
 
-  add_index "hosts", ["address"], :name => "index_hosts_on_address", :unique => true
+  add_index "hosts", ["ip_address"], :name => "index_hosts_on_address", :unique => true
 
 end
