@@ -16,12 +16,12 @@ class HostTest < ActiveSupport::TestCase
 
   # I'm looking for a cable modem user
   test "capped cable modem user is capped" do
-    a = Host.find_by_address("169.231.32.4")
+    a = Host.find_by_address(hosts(:capped_cable_modem_user).ip_address)
     assert_equal true, a.inbound_restricted
   end
 
   test "uncapped cable modem user is uncapped" do
-    a = Host.find_by_address("169.231.33.5")
+    a = Host.find_by_address(hosts(:uncapped_cable_modem_user).ip_address)
     assert_equal false, a.inbound_restricted
   end
 
