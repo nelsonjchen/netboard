@@ -45,9 +45,10 @@ class HostTest < ActiveSupport::TestCase
   end
 
   test "looking up a user who puts in a DNS name" do
-    Resolv.expects(:getaddress).with("example.com").returns("169.231.12.129")
+    user_ip_address = hosts(:topsite).ip_address
+    Resolv.expects(:getaddress).with("example.com").returns(user_ip_address)
     h = Host.find_by_address("example.com")
-    assert_equal "169.231.12.129", h.ip_address
+    assert_equal user_ip_address, h.ip_address
   end
 
   test "looking up for a user who puts in a DNS name that doesn't exist" do
