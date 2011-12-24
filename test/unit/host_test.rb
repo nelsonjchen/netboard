@@ -20,6 +20,11 @@ class HostTest < ActiveSupport::TestCase
     assert_equal true, a.inbound_restricted
   end
 
+  test "uncapped cable modem user is uncapped" do
+    a = Host.find_by_address("169.231.33.5")
+    assert_equal false, a.inbound_restricted
+  end
+
   # Pretend update script thing
   test "update an existing host with new data" do
     b = Host.find_or_create_by_ip_address("169.231.33.2")
