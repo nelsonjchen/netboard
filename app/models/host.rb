@@ -1,3 +1,3 @@
 class Host < ActiveRecord::Base
-  validates :address, presence:true, uniqueness:true
+  validates :ip_address, presence:true, uniqueness:true
 end

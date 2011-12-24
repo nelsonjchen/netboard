@@ -5,6 +5,7 @@ class HostTest < ActiveSupport::TestCase
     assert true
   end
 
+  # Test uniqueness
   test "can't save hosts with the same address" do
     a = Host.new(ip_address:"169.231.24.2",inbound:50)
     b = Host.new(ip_address:"169.231.24.2",inbound:0)
