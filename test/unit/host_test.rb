@@ -9,12 +9,11 @@ class HostTest < ActiveSupport::TestCase
     a = Host.new(ip_address:"169.231.24.2",inbound:50)
     b = Host.new(ip_address:"169.231.24.2",inbound:0)
     a.save
-
     assert_equal false, b.save
   end
 
   test "capped cable modem user is capped" do
-    a = Host.find_by_ip_address("169.231.32.4")
+    a = Host.find_by_address("169.231.32.4")
     assert_equal true, a.inbound_restricted
   end
 
@@ -33,7 +32,7 @@ class HostTest < ActiveSupport::TestCase
 
   test "looking up nonexistant host" do
     assert_raise(ActiveRecord::RecordNotFound) do
-      Host.find_by_ip_address!("127.0.0.1")
+      Host.find_by_address!("127.0.0.1")
     end
   end
 
