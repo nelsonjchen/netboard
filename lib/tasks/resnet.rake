@@ -13,8 +13,8 @@ namespace "resnet" do
       mHost.update_attributes({
         inbound:attributes["inbound"],
         outbound:attributes["outbound"],
-        inbound_restricted:attributes["inbound_restricted"],
-        outbound_restricted:attributes["outbound_restricted"]
+        inbound_restricted:attributes["in_restricted"],
+        outbound_restricted:attributes["out_restricted"]
       })
     end
   end
