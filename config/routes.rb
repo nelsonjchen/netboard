@@ -58,6 +58,7 @@ Netboard::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
   
+  match 'status/:address/:format' => 'status#show', :address => /[^\/]+/
   match 'status/:address' => 'status#show', :address => /[^\/]+/
   root :to => 'status#show'
 end
