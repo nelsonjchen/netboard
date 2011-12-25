@@ -82,5 +82,7 @@ class HostTest < ActiveSupport::TestCase
   test "only accept IPv4 addresses for Host model" do
     a = Host.find_or_create_by_ip_address("invalid ip")
     assert_equal false, a.save
+    b = Host.find_or_create_by_ip_address("169.231.2.1")
+    assert_equal true, b.save
   end
 end
