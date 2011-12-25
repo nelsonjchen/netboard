@@ -14,6 +14,8 @@ group :assets do
   gem 'sass-rails',   '~> 3.1.5'
   gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
+  # Twitter Bootstrap
+  gem 'less-rails-bootstrap'
 end
 
 gem 'jquery-rails'
@@ -31,8 +33,6 @@ gem 'jquery-rails'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 #
 
-# Twitter Bootstrap
-gem 'less-rails-bootstrap'
 
 group :test do
   # Pretty printed test output
