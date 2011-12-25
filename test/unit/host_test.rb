@@ -55,4 +55,13 @@ class HostTest < ActiveSupport::TestCase
     Resolv.expects(:getaddress).with("example.com").returns("127.0.0.1")
     assert_equal nil, Host.find_by_address("example.com")
   end
+
+  test "parse a json from external sources" do
+    res = nil
+    File.open(Rails.root.join("test/fixtures/stitch_example.json")) do |f|
+      res = f.read
+    end
+    Net::HTTP.expects(:get).with(URI("http://routermachine/report/all")).returns(res)
+
+  end
 end
