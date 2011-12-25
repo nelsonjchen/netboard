@@ -61,7 +61,7 @@ class HostTest < ActiveSupport::TestCase
     File.open(Rails.root.join("test/fixtures/stitch_example.json")) do |f|
       res = f.read
     end
-    Net::HTTP.expects(:get).with(URI("http://routermachine/report/all")).returns(res)
+    Host.update_from_json(res)
 
   end
 end
