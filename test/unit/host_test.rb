@@ -57,11 +57,15 @@ class HostTest < ActiveSupport::TestCase
   end
 
   test "parse a json from external sources" do
+    res = get_example_json
+    Host.update_from_json(res)
+  end
+
+  def get_example_json
     res = nil
     File.open(Rails.root.join("test/fixtures/stitch_example.json")) do |f|
       res = f.read
     end
-    Host.update_from_json(res)
-
+    res
   end
 end
