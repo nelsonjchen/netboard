@@ -36,6 +36,7 @@ group :test do
 
   # Mocha for testing
   gem 'mocha', :require => false   
+  gem 'ruby-prof'
 end
 
 # Pry for better console
@@ -45,6 +46,7 @@ group :development do
   gem 'pry-rails'
   gem 'guard-test'
   gem 'rb-readline'
+  gem 'ruby-prof'
   
   platforms :ruby do
     gem 'rb-readline'
