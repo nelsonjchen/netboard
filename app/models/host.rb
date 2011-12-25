@@ -14,11 +14,15 @@ class Host < ActiveRecord::Base
     self.find_by_ip_address!(Resolv.getaddress(address))
   end
 
-  def self.update_from_json_file(config_filepath = nil)
+  def self.update_from_json_config(config_filepath = nil)
     config_filepath = config_filepath || Rails.root.join("config/resnet.yml")
     url = YAML.load_file(config_filepath)['stitch_url']
     resp = Net::HTTP.get(URI(url))
-    hosts = ActiveSupport::JSON.decode(resp)
+    update_from_json(resp)
+  end
+
+  def self.update_from_json(json)
+    hosts = ActiveSupport::JSON.decode(json)
     self.transaction do
       hosts.each do |host|
         mHost = self.find_or_create_by_ip_address(host[0])
@@ -32,5 +36,4 @@ class Host < ActiveRecord::Base
       end
     end
   end
-
 end
