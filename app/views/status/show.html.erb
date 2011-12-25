@@ -1,4 +1,6 @@
-<h1>Status#show</h1>
-<p>Find me in app/views/status/show.html.erb</p>
 
-<%= @host.inspect %>
+<% if @host.nil? %>
+  nelson no find
+<% else %>
+  <%= @host.inspect%>
+<% end %>
