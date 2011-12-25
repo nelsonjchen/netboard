@@ -59,4 +59,5 @@ Netboard::Application.routes.draw do
   # match ':controller(/:action(/:id(.:format)))'
   
   match 'status/:address' => 'status#show'
+  root :to 'status#show'
 end
