@@ -2,7 +2,9 @@ require 'resolv'
 require 'net/http'
 
 class Host < ActiveRecord::Base
-  validates :ip_address, presence:true, uniqueness:true
+  validates :ip_address, presence:true,
+    uniqueness:true,
+    format:{with:/^(\d{1,3}\.){3}\d{1,3}$/}
 
   # The following should be as if we looked up by address in the first place.
   public
