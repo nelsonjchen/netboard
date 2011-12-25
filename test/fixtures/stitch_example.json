@@ -4,5 +4,11 @@
     "outbound": 42,
     "out_restricted": false,
     "in_restricted": false
+  },
+  "169.231.54.12": {
+    "inbound": 1802313121,
+    "outbound": 12412,
+    "out_restricted": false,
+    "in_restricted": true  
   }
 }

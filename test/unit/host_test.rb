@@ -59,6 +59,16 @@ class HostTest < ActiveSupport::TestCase
   test "parse a json from external sources" do
     res = get_example_json
     Host.update_from_json(res)
+
+    host = Host.find_by_address("169.231.45.54")
+
+    assert_equal 13, host.inbound
+    assert_equal false, host.outbound_restricted
+
+    host2 = Host.find_by_address("169.231.54.12")
+
+    assert_equal 1802313121, host2.inbound
+    assert_equal true, host2.inbound_restricted
   end
 
   def get_example_json
