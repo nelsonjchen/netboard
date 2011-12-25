@@ -14,7 +14,7 @@ class Host < ActiveRecord::Base
     self.find_by_ip_address!(Resolv.getaddress(address))
   end
 
-  def self.update_from_json(config_filepath = nil)
+  def self.update_from_json_file(config_filepath = nil)
     config_filepath = config_filepath || Rails.root.join("config/resnet.yml")
     url = YAML.load_file(config_filepath)['stitch_url']
     resp = Net::HTTP.get(URI(url))
@@ -32,4 +32,5 @@ class Host < ActiveRecord::Base
       end
     end
   end
+
 end
