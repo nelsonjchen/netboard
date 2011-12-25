@@ -32,7 +32,7 @@ gem 'jquery-rails'
 #
 
 # Twitter Bootstrap
-gem 'twitter-bootstrap-rails'
+gem 'less-rails-bootstrap'
 
 group :test do
   # Pretty printed test output
