@@ -1,1 +1,8 @@
-{"21.254.110.32": {"inbound": 0, "outbound": 66, "out_restricted": false, "in_restricted": false}}
+{
+  "21.254.110.32": {
+    "inbound": 0,
+    "outbound": 66,
+    "out_restricted": false,
+    "in_restricted": false
+  }
+}
