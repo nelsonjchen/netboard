@@ -1,5 +1,6 @@
 class StatusController < ApplicationController
   def show
+    @title = "Current Status"
     address = params[:address] || request.remote_ip
     @host = Host.find_by_address(address)
 
