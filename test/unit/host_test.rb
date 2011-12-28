@@ -85,4 +85,8 @@ class HostTest < ActiveSupport::TestCase
     b = Host.find_or_create_by_ip_address("169.231.2.1")
     assert_equal true, b.save
   end
+
+  test "finding unresolvable address returns nil" do
+    assert_equal nil, Host.find_by_ip_address("nil")
+  end
 end

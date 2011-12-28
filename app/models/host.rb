@@ -9,7 +9,12 @@ class Host < ActiveRecord::Base
   # The following should be as if we looked up by address in the first place.
   public
   def self.find_by_address(address)
-    self.find_by_ip_address(Resolv.getaddress(address))
+    begin
+      ip_address = Resolv.getaddress(address)
+    rescue
+      return nil
+    end
+    self.find_by_ip_address(ip_address)
   end
 
   def self.find_by_address!(address)
