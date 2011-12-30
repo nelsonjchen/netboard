@@ -6,4 +6,8 @@ class StatusControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "the truth" do
+    assert true
+  end
+
 end
