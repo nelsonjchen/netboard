@@ -10,8 +10,7 @@
 
 
     <%= form_tag({:controller => "status", :action => "redirect"}, :method => "get") do %>
-    <%= label_tag(:q, "Lookup:") %>
-    <%= text_field_tag(:address) %>
+      <%= text_field_tag(:address, nil , :class => "span7") %>
     <%= submit_tag("Search") %>
     <% end %>
 
