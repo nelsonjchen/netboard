@@ -16,7 +16,7 @@
         <% if @host.inbound_restricted%>
           <p>
           <span class="label warning">Warning</span>
-          This host's download speed is restricted.
+          This host's download speed is restricted to the speed mentioned below.
           </p>
         <% end %>
       </div>
@@ -27,6 +27,7 @@
     </div>
     <div class="row">
       <div class="span6">
+        <h4>About</h4>
         <p>
         The above information is the amount of bandwidth consumed by that host
         during the peak hours of 1PM to 1AM. If the amount of data downloaded
@@ -36,9 +37,15 @@
         </p>
       </div>
       <div class="span6"> 
+        <h4>Other Restrictions</h4>
         <p>
-
+        In addition, the following traffic is always restricted to the listed
+        speed, peak hours or not.
         </p>
+        <h5>512kbps Download/Upload</h5>
+        <ul>
+          <li>P2P Applications</li>
+        </ul>
       </div>
     </div>
   </div>
