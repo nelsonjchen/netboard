@@ -5,9 +5,10 @@ class StatusController < ApplicationController
     @host = Host.find_by_address(address)
 
     respond_to do |format|
-      format.html
+      format.html {render "index"}
       format.json {render :json => @host}
     end
+
   end
 
 end

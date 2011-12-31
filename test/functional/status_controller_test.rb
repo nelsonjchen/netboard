@@ -10,4 +10,16 @@ class StatusControllerTest < ActionController::TestCase
     assert true
   end
 
+  test "should show prompt when visiting from outside resnet" do
+    flunk
+  end
+
+  test "should show prompt with flash for unknown ip query" do
+    flunk
+  end
+
+  test "should show status and prompt when visiting from inside resnet" do
+    flunk
+  end
+
 end
