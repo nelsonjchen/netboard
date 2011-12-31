@@ -31,6 +31,13 @@ class StatusControllerTest < ActionController::TestCase
     assert_template "show"
   end
 
+  test "should show status layout when known query from inside known resnet" do
+    mock_ip("169.231.39.189")
+    get :show, {address:"169.231.12.129"}
+    assert_response :success
+    assert_template "show"
+  end
+
   test "should show unknown layout for unknown query from inside resnet" do
     mock_ip("169.231.39.189")
     get :show, {address:"51.41.31.21"}
@@ -41,5 +48,4 @@ class StatusControllerTest < ActionController::TestCase
   def mock_ip(ip_address)
     @request.env['REMOTE_ADDR'] = ip_address    
   end
-
 end
