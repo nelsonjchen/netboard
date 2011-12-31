@@ -1,1 +1,28 @@
-Bandwidth statistics for a ResNet IP address can be found here.
+<div class="page-header">
+  <h1>Lookup Host</h1>
+</div>
+<div class="row">
+  <div class="span8 offset4">
+    <p>
+    You can find the current bandwidth usage for a UCSB ResNet host the past 24
+    hours during peak hours with this tool.
+    </p>
+
+    <p>
+    The following inputs are accepted:
+    </p>
+
+    <%= form_tag("/status", :method => "get") do %>
+    <%= label_tag(:q, "Search for:") %>
+    <%= text_field_tag(:address) %>
+    <%= submit_tag("Search") %>
+    <% end %>
+
+    <ul>
+      <li>IP addresses of a host on ResNet</li>
+      <li>DNS Names that resolve to the above (courtesy for dynamic DNS users)</li>
+    </ul>
+  </div>
+</div>
+
+
