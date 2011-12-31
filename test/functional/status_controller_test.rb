@@ -11,7 +11,8 @@ class StatusControllerTest < ActionController::TestCase
   end
 
   test "should show prompt when visiting from outside resnet" do
-    flunk
+    mock_ip("51.41.31.21")
+    get :show
   end
 
   test "should show prompt with flash for unknown ip query" do
