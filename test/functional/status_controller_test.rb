@@ -13,6 +13,7 @@ class StatusControllerTest < ActionController::TestCase
   test "should show prompt when visiting from outside resnet" do
     mock_ip("51.41.31.21")
     get :show
+    assert_equal "51.41.31.21", assigns[:address]
   end
 
   test "should show prompt with flash for unknown ip query" do
