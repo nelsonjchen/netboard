@@ -28,7 +28,8 @@ class StatusController < ApplicationController
 
   end
 
-    def redirect
-      redirect_to address_pretty_path(params[:address])
-    end
+  def redirect
+    redirect_to address_pretty_path(params[:address])
+  end
+
 end
