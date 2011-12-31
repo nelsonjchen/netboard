@@ -13,14 +13,14 @@
     </p>
 
     <%= form_tag({:controller => "status", :action => "show"}, :method => "get") do %>
-    <%= label_tag(:q, "Search for:") %>
+    <%= label_tag(:q, "Lookup:") %>
     <%= text_field_tag(:address) %>
     <%= submit_tag("Search") %>
     <% end %>
 
     <ul>
       <li>IP addresses of a host on ResNet</li>
-      <li>DNS Names that resolve to the above (courtesy for dynamic DNS users)</li>
+      <li>DNS Names that resolve to a ResNet host</li>
     </ul>
   </div>
 </div>
