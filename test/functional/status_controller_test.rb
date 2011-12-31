@@ -22,4 +22,8 @@ class StatusControllerTest < ActionController::TestCase
     flunk
   end
 
+  def mock_ip(ip_address)
+    ActionDispatch::Request.any_instance.stubs(:remote_ip).returns(ip_address)
+  end
+
 end
