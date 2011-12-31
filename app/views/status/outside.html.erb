@@ -12,7 +12,7 @@
     The following inputs are accepted:
     </p>
 
-    <%= form_tag("/status", :method => "get") do %>
+    <%= form_tag({:controller => "status", :action => "show"}, :method => "get") do %>
     <%= label_tag(:q, "Search for:") %>
     <%= text_field_tag(:address) %>
     <%= submit_tag("Search") %>
