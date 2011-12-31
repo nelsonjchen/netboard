@@ -21,6 +21,9 @@ class StatusControllerTest < ActionController::TestCase
   end
 
   test "should show status and prompt when visiting from inside resnet" do
+    mock_ip("169.231.39.189")
+    get :show
+    assert_response :success
     flunk
   end
 
