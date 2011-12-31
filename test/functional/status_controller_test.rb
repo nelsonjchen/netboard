@@ -25,7 +25,7 @@ class StatusControllerTest < ActionController::TestCase
   end
 
   def mock_ip(ip_address)
-    ActionDispatch::Request.any_instance.stubs(:remote_ip).returns(ip_address)
+    @request.env['REMOTE_ADDR'] = ip_address    
   end
 
 end
