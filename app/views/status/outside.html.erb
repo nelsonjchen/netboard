@@ -8,9 +8,6 @@
     hours during peak hours with this tool.
     </p>
 
-    <p>
-    The following inputs are accepted:
-    </p>
 
     <%= form_tag({:controller => "status", :action => "show"}, :method => "get") do %>
     <%= label_tag(:q, "Lookup:") %>
@@ -18,6 +15,9 @@
     <%= submit_tag("Search") %>
     <% end %>
 
+    <p>
+    The following inputs are accepted:
+    </p>
     <ul>
       <li>IP addresses of a host on ResNet</li>
       <li>DNS Names that resolve to a ResNet host</li>
