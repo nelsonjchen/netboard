@@ -9,7 +9,7 @@
     </p>
 
 
-    <%= form_tag({:controller => "status", :action => "show"}, :method => "get") do %>
+    <%= form_tag({:controller => "status", :action => "redirect"}, :method => "get") do %>
     <%= label_tag(:q, "Lookup:") %>
     <%= text_field_tag(:address) %>
     <%= submit_tag("Search") %>

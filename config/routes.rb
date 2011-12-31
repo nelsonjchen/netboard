@@ -57,8 +57,8 @@ Netboard::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
-  
+  match 'status/redirect' => "status#redirect"
   match 'status/:address/:format' => 'status#show', :address => /[^\/]+/
-  match 'status/:address' => 'status#show', :address => /[^\/]+/
+  match 'status/:address' => 'status#show', :address => /[^\/]+/, :as => :address_pretty
   root :to => 'status#show'
 end
