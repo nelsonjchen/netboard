@@ -1,11 +1,28 @@
 class StatusController < ApplicationController
   def show
     @title = "Bandwidth Usage"
-    @address = params[:address] || request.remote_ip
+    @address = request.remote_ip
+    @query = false
+
+    if params[:address]
+      @address = params[:address]
+      @query = true
+    end
+
     @host = Host.find_by_address(@address)
 
     respond_to do |format|
-      format.html {render }
+      format.html do
+        if @host
+          render
+        else
+          if @query
+            render "unknown"
+          else
+            render "outside"
+          end
+        end
+      end
       format.json {render :json => @host}
     end
 
