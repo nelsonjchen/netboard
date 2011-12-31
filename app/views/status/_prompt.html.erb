@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="span8 offset4">
+    <p>
+    You can find the current bandwidth usage for a UCSB ResNet host the past 24
+    hours during peak hours here.
+    </p>
+
+    <%= form_tag({:controller => "status", :action => "redirect"}, :method => "get") do %>
+    <%= text_field_tag(:address, nil , :class => "span7") %>
+    <%= submit_tag("Lookup") %>
+    <% end %>
+
+    <p>
+    The following inputs are accepted:
+    </p>
+    <ul>
+      <li>IP address of a host on ResNet</li>
+      <li>DNS name that resolve to a ResNet host</li>
+    </ul>
+  </div>
+</div>
