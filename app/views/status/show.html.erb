@@ -7,6 +7,13 @@
   <div class="span4">
     <h2><%= @host.ip_address %></h2>
     <p>This is the IP address of the host in question.</p>
+
+    <p>
+    Information for this host was last updated 
+    <%=
+    distance_of_time_in_words(Time.now, @host.updated_at)
+    %> ago.
+    </p>
   </div>
   <div class="span12">
     <div class="row">
