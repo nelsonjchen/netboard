@@ -6,7 +6,12 @@
 <div class="row">
   <div class="span4">
     <h2><%= @host.ip_address %></h2>
-    <p>This is the IP address of the host in question.</p>
+    <% if @host.ip_address == request.remote_ip %>
+      <p>
+      <span class="label Notice">Notice</span>
+      This is the IP address of the device you are currently using.
+      </p>
+    <% end %>
 
     <p>
     Information for this host was updated 
