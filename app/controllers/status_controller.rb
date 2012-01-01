@@ -29,7 +29,11 @@ class StatusController < ApplicationController
   end
 
   def redirect
-    redirect_to address_pretty_path(params[:address])
+    if params[:address].blank?
+      redirect_to root_path
+    else
+      redirect_to address_pretty_path(params[:address])
+    end
   end
 
 end

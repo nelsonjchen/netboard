@@ -60,5 +60,6 @@ Netboard::Application.routes.draw do
   match 'status/redirect' => "status#redirect"
   match 'status/:address/:format' => 'status#show', :address => /[^\/]+/
   match 'status/:address' => 'status#show', :address => /[^\/]+/, :as => :address_pretty
+  match 'status/' => 'status#show'
   root :to => 'status#show'
 end
