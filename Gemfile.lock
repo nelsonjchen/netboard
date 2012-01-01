@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/halves/less-rails-bootstrap.git
+  revision: 11f6023e59cef4f9015c849ebb4257dc7440bc6d
+  specs:
+    less-rails-bootstrap (1.4.2)
+      less-rails (~> 2.1.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -64,8 +71,6 @@ GEM
     less-rails (2.1.2)
       actionpack (>= 3.1)
       less (~> 2.0.7)
-    less-rails-bootstrap (1.4.2)
-      less-rails (~> 2.1.0)
     libv8 (3.3.10.4)
     mail (2.3.0)
       i18n (>= 0.4.0)
@@ -158,7 +163,7 @@ DEPENDENCIES
   guard
   guard-test
   jquery-rails
-  less-rails-bootstrap
+  less-rails-bootstrap!
   mocha
   pry-rails
   rails (= 3.1.3)
