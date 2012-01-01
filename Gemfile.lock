@@ -1,8 +1,9 @@
 GIT
   remote: git://github.com/halves/less-rails-bootstrap.git
-  revision: 11f6023e59cef4f9015c849ebb4257dc7440bc6d
+  revision: 2c9e539bafbf990c8e468e83fe1a6323ca9c11ec
+  branch: 2.0-wip
   specs:
-    less-rails-bootstrap (1.4.2)
+    less-rails-bootstrap (2.0.0RC1)
       less-rails (~> 2.1.0)
 
 GEM
