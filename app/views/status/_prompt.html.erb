@@ -1,12 +1,14 @@
 <div class="row">
-  <div class="span8 offset4">
+  <div class="span4">
     <p>
     You can find the current bandwidth usage for an UCSB ResNet host the past 24
     hours during peak hours here.
     </p>
+  </div>
+  <div class="span12">
 
     <%= form_tag({:controller => "status", :action => "redirect"}, :method => "get") do %>
-    <%= text_field_tag(:address, nil , :class => "span6") %>
+    <%= text_field_tag(:address, nil , :class => "span8") %>
     <%= submit_tag("Lookup", :class => "btn") %>
     <% end %>
 
