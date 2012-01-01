@@ -7,7 +7,7 @@
 
     <%= form_tag({:controller => "status", :action => "redirect"}, :method => "get") do %>
     <%= text_field_tag(:address, nil , :class => "span7") %>
-    <%= submit_tag("Lookup") %>
+    <%= submit_tag("Lookup", :class => "btn") %>
     <% end %>
 
     <p>
