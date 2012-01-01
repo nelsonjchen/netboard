@@ -9,7 +9,7 @@
     <p>This is the IP address of the host in question.</p>
 
     <p>
-    Information for this host was last updated 
+    Information for this host was updated 
     <%=
     distance_of_time_in_words(Time.now, @host.updated_at)
     %> ago.
@@ -41,6 +41,10 @@
         exceeds 1.5 GB, the host's download speed will be restricted to
         512kbps.  This limit is lifted once the amount used within the past 24
         hours under peak hours is less than 1.5 GB.
+        </p>
+
+        <p>
+        Upload is not restricted by bandwidth use in any way..
         </p>
       </div>
       <div class="span6"> 
