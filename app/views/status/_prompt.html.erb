@@ -11,7 +11,8 @@
                  :action => "redirect"},
                  :method => "get",
                  :class => "search-form") do %>
-    <%= text_field_tag(:address, nil , :class => "search-query") %>
+                   <%= text_field_tag(:address, nil , {:type =>"search",
+                                      :class => "search-query" }) %>
     <%= submit_tag("Lookup", :class => "btn") %>
     <% end %>
 
